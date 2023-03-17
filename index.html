@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"/>
+    <title>Examen 2º Trimestre</title>
+    <style>
+        * {
+        padding: 0px;
+        margin: 0;
+        box-sizing: border-box;
+        }
+        .general > div{
+            border-radius: 5px;
+        }
+        body{
+            padding-top: 20px;
+            background-color: rgb(169, 187, 194);
+        }
+        .general{
+            width: 94%;
+            margin: 0 auto;
+            max-width: 1000px;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(5,auto);
+            gap: 5px;
+        }
+
+        header{
+            grid-column: 1/4;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar{
+            margin-top: 5px;
+            justify-content: space-between;
+            background-color: rgb(10, 10, 100);
+            color: white;
+            display: flex;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .navbar li:hover{
+            background-color: red;
+            color: yellow;
+        }
+        .navbar p:hover{
+            background-color: red;
+            color: yellow;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            gap: 5px;
+        }
+        .texto{
+            text-shadow: 1px 1px 2px white;
+            font-weight: bold;
+        }
+        h1{
+            text-shadow:2px 2px 3px green;
+        }
+        .imagen{
+            width: 100%;
+            border-radius: 5px;
+            align-items: center;
+            background-image: url(imagenheader.jpeg);
+        }
+        .imagen h1{
+            font-size: 1.5em;
+            margin: 10px 0px;
+            text-align: center;
+            color: white;
+        }
+        .izquierda{
+            padding: 20px;
+            grid-column: 1/2;
+            gap: 10px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            background-color: rgb(205, 204, 204);
+        }
+        .tarjeta{
+            width: 80px;
+            box-shadow: 2px 2px 4px grey;
+            background-color: white;
+        }
+        .img{
+            width: 80px; 
+            height: 80px;
+        }
+        .tarjeta p{
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .central{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding: 20px;
+            grid-column: 2/3;
+            border-radius: 5px;
+            background-color: lightyellow;
+            text-align: center;
+        }
+        .imagencentral{
+            width: 150px;
+            height: 150px;
+        }
+        .verde{
+            font-weight: bold;
+            color: green;
+        }
+        .azul{
+            font-weight: bold;
+            font-style: italic;
+            color: blue;
+        }
+        .derecha{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding: 20px;
+            grid-column: 3/4;
+            background-color: #a59f9f;
+        }
+        .imagenderecha{
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        .derecha span{
+            font-weight: bold;
+            color: red;
+        }
+        .formulario{
+            padding: 15px;
+            grid-column: 1/3;
+            background-color: white;
+        }
+        .iconInput{
+            display: grid;
+            grid-template-columns: 14px 1fr;
+            gap: 7px;
+            align-items: center;
+        }
+        .form{
+            gap: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+        form label {
+            font-weight: bold;
+            display: block;
+            padding-bottom: 5px;
+        }
+        i{
+            margin-right: 5px;
+            display: inline-block;
+        }
+        .form input[type=text],form input[type=password]{
+            padding: 10px;
+            display: inline-block;
+            width: auto;
+            border: 1;
+        }
+        .form input[type=submit]{
+            font-weight: bold;
+            margin-top: 20px;
+            border: 0;
+            background-color: rgb(37, 172, 172);
+            color: white;
+            padding: 20px 0px;
+        }
+        .form input[type=submit]:hover{
+            background-color: rgb(62, 234, 71);
+        }
+        button{
+            text-align: center;
+            margin-top: 10px;
+        }
+        .tabla{
+            padding: 20px;
+            background-color: #E67E22;
+            grid-column: 3/4;
+        }
+        table{
+            margin: 20px auto 0 auto;
+            border-spacing: 0;
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            box-shadow: 4px 4px 1px black;
+            border-bottom: 2px solid green;
+        }
+        table th {
+            padding: 10px;
+            background-color: black;
+            text-align: left;
+            color: white;
+        }
+        table td {
+            padding: 10px;
+            background-color: rgb(209, 208, 208);
+            text-align: left;
+        }
+        table tr:hover>td{
+            background-color: purple;
+            color: white;
+        }
+        .footer{
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            grid-column: 1/4;
+        }
+        .footer p{
+            padding: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+        @media (max-width:768px){
+            .navbar{
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            .izquierda,.central,.derecha,.formulario,.tabla{
+                grid-column: 1/4;
+            }
+            .imagen h1{
+                font-size: 18px;
+            }
+            .izquierda{
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="general">
+        <header>
+            <div class ="imagen">
+                <h1>HTML+CSS. FLEXBOX Y GRID</h1>
+            </div>
+            <div class="navbar">
+                <div class="texto">
+                    <p>EXAMEN 2ª Eval LM-DAW1</p>
+                </div>
+                <div class="nav">
+                    <nav>
+                        <ul>
+                            <li>Sobre Nosotros</li>
+                            <li>Servicios</li>
+                            <li>Contacto</li>
+                        </ul>
+                    </nav>
+                 </div>
+            </div>
+        </header>
+        <div class="izquierda">
+            <div class="tarjeta">
+                <img src="icono.png" alt="icono" class="img">
+                <p>IAV</p>
+            </div>
+            <div class="tarjeta">
+                <img src="icono.png" alt="icono" class="img">
+                <p>MAD</p>
+            </div>
+            <div class="tarjeta">
+                <img src="icono3.png" alt="icono3" class="img">
+                <p>MVM</p>
+            </div>
+            <div class="tarjeta">
+                <img src="icono2.png" alt="icono2" class="img">
+                <p>JAD</p>
+            </div>
+            <div class="tarjeta">
+                <img src="icono3.png" alt="icono3" class="img">
+                <p>CAV</p>
+            </div>
+        </div>
+        <div class="central">
+            <p>Este examen corresponde a la segunda evaluación del módulo
+                    <span class="verde">Lenguajes de Marcas y Sistemas de Gestión de 
+                            Información
+                    </span>
+                    del primer curso del Ciclo Formativo
+                    <span class="azul">
+                        Desarrollo de Aplicaciones Web
+                    </span>
+            </p>
+            <img src="centro.jpeg" alt="imagencentro" class="imagencentral">
+        </div>
+        <div class="derecha">
+            <p>Se pueden tomar todos los apuntes que se estime oportuno
+                    pero <span>NO SE PERMITE COPIAR</span> ni <span>TOTAL</span> ni
+                    <span>PARCIALMENTE</span> de otro compañero
+            </p>
+            <img src="derecha.jpeg" alt="imagenderecha" class="imagenderecha">
+        </div>
+        <div class="formulario">
+            <form class="form" action="" method="get">
+                <div class="usuario">
+                    <label for="usuario" class="nomUsuario">Nombre Usuario</label>
+                    <div class="iconInput">
+                    <i class="fas fa-user"></i><input type="text" placeholder="Introducir nombre de usuario">
+                    </div>
+                </div>
+                <div class="contraseña">
+                    <label for="contrasenia" class="intContraseña">Contraseña</label>
+                    <div class="iconInput">
+                        <i class="fas fa-lock"></i><input type="password" placeholder="Introducir contraseña">
+                </div>
+                </div>
+                <div class="contraseña">
+                    <label for="repetircontrasenia" class="intContraseña">Contraseña</label>
+                <div class="iconInput">
+                    <i class="fas fa-lock"></i><input type="password" placeholder="Repetir contraseña">
+                </div>
+                </div>
+                <input type="submit" value="Entrar">
+            </form>
+        </div>
+        <div class="tabla">
+            <form class="formtabla" action="">
+                <select name="opciones" id="">
+                    <option value="google">Google</option>
+                    <option value="palomeras">Palomeras-Vallecas</option>
+                    <option value="madrid" selected>Real Madrid</option>
+                </select>
+            </form>
+            <table>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Edad</th>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-female"></i>Ana</td>
+                    <td>García Gónzalez</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-male"></i>Luis</td>
+                    <td>Fdez. Alterio</td>
+                    <td>21</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-female"></i>Rosa</td>
+                    <td>Gómez Gómez</td>
+                    <td>19</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-male"></i>Antonio</td>
+                    <td>Durán Gutiérrez</td>
+                    <td>22</td>
+                </tr>
+            </table>
+        </div>
+        <footer class="footer">
+            <p>14/03/2023 Imanol Alonso Vera</p>
+        </footer>
+    </div>
+</body>
+</html>
